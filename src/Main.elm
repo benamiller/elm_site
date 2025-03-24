@@ -2,7 +2,8 @@ module Main exposing (main)
 
 import Browser
 import Browser.Navigation as Nav
-import Html exposing (Html, div, h1, text)
+import Html exposing (Html, a, div, h1, text)
+import Html.Events exposing (onClick)
 import Url exposing (Url)
 
 
@@ -17,7 +18,7 @@ type alias Model =
 type Page
     = Home
     | About
-    | Portfolio
+    | Projects
 
 
 init : () -> Url -> Nav.Key -> ( Model, Cmd Msg )
@@ -30,20 +31,15 @@ init _ url key =
 
 
 type Msg
-    = LinkClicked Browser.UrlRequest
+    = Navigate String
     | UrlChanged Url
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        LinkClicked urlRequest ->
-            case urlRequest of
-                Browser.Internal url ->
-                    ( model, Nav.pushUrl model.key (Url.toString url) )
-
-                Browser.External href ->
-                    ( model, Nav.load href )
+        Navigate path ->
+            ( model, Nav.pushUrl model.key path )
 
         UrlChanged url ->
             ( { model | currentPage = urlToPage url }, Cmd.none )
@@ -55,15 +51,75 @@ update msg model =
 
 view : Model -> Browser.Document Msg
 view model =
-    div []
-        [ h1 [] [ text model.title ]
-        , text "Hello"
+    { title = "Ben"
+    , body =
+        [ div []
+            [ navigation
+            , pageContent model.currentPage
+            ]
         ]
+    }
+
+
+navigation : Html Msg
+navigation =
+    div []
+        [ a [ onClick (Navigate "/") ] [ text "Home" ]
+        , text " | "
+        , a [ onClick (Navigate "/about") ] [ text "About" ]
+        , text " | "
+        , a [ onClick (Navigate "/projects") ] [ text "Projects" ]
+        ]
+
+
+pageContent : Page -> Html Msg
+pageContent page =
+    case page of
+        Home ->
+            div [] [ h1 [] [ text "Home" ], text "Welcome" ]
+
+        About ->
+            div [] [ h1 [] [ text "About" ], text "This is about." ]
+
+        Projects ->
+            div [] [ h1 [] [ text "Projects" ], text "These are projects" ]
+
+
+
+-- ROUTING
+
+
+urlToPage : Url -> Page
+urlToPage url =
+    case url.path of
+        "/about" ->
+            About
+
+        "/projects" ->
+            Projects
+
+        _ ->
+            Home
 
 
 
 -- PROGRAM
 
 
+main : Program () Model Msg
 main =
-    Browser.sandbox { init = init, update = update, view = view }
+    Browser.application
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
+        , onUrlRequest =
+            \urlRequest ->
+                case urlRequest of
+                    Browser.Internal url ->
+                        Navigate (Url.toString url)
+
+                    Browser.External href ->
+                        Navigate "/"
+        , onUrlChange = UrlChanged
+        }
