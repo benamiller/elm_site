@@ -18,7 +18,7 @@ type alias Model =
 
 type Page
     = Home
-    | About
+    | Blog
     | Projects
 
 
@@ -64,10 +64,10 @@ view model =
 
 navigation : Html Msg
 navigation =
-    div []
+    div [ class "navigation" ]
         [ a [ onClick (Navigate "/"), class "nav-item", id "home-link" ] [ text "Home" ]
         , text " | "
-        , a [ onClick (Navigate "/about"), class "nav-item" ] [ text "About" ]
+        , a [ onClick (Navigate "/blog"), class "nav-item" ] [ text "Blog" ]
         , text " | "
         , a [ onClick (Navigate "/projects"), class "nav-item" ] [ text "Projects" ]
         ]
@@ -79,8 +79,8 @@ pageContent page =
         Home ->
             div [] [ h1 [] [ text "Home" ], text "Welcome test 2" ]
 
-        About ->
-            div [] [ h1 [] [ text "About" ], text "This is about." ]
+        Blog ->
+            div [] [ h1 [] [ text "Blog" ], text "This is blog." ]
 
         Projects ->
             div [] [ h1 [] [ text "Projects" ], text "These are projects" ]
@@ -93,8 +93,8 @@ pageContent page =
 urlToPage : Url -> Page
 urlToPage url =
     case url.path of
-        "/about" ->
-            About
+        "/blog" ->
+            Blog
 
         "/projects" ->
             Projects
