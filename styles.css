@@ -5,7 +5,11 @@
 	flex-direction: column;
 }
 
+.navigation {
+}
+
 .nav-item {
+	margin: 1rem;
 	cursor: pointer;
 	color: firebrick;
 }
