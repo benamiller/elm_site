@@ -54,7 +54,7 @@ view : Model -> Browser.Document Msg
 view model =
     { title = "Ben"
     , body =
-        [ div []
+        [ div [ class "application" ]
             [ navigation
             , pageContent model.currentPage
             ]

@@ -1,4 +1,12 @@
+.application {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 .nav-item {
 	cursor: pointer;
 	color: firebrick;
 }
+
