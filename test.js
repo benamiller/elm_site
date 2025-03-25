@@ -5347,7 +5347,7 @@ var $author$project$Main$pageContent = function (page) {
 							[
 								$elm$html$Html$text('Home')
 							])),
-						$elm$html$Html$text('Welcome test 2')
+						$elm$html$Html$text('Welcome test')
 					]));
 		case 'About':
 			return A2(

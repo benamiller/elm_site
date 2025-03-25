@@ -77,7 +77,7 @@ pageContent : Page -> Html Msg
 pageContent page =
     case page of
         Home ->
-            div [] [ h1 [] [ text "Home" ], text "Welcome" ]
+            div [] [ h1 [] [ text "Home" ], text "Welcome test 2" ]
 
         About ->
             div [] [ h1 [] [ text "About" ], text "This is about." ]
