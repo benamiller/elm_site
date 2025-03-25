@@ -32,6 +32,7 @@ init _ url key =
 
 type Msg
     = Navigate String
+    | UrlChanged Url
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
