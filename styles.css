@@ -1,3 +1,8 @@
+body {
+	color: whitesmoke;
+	background-color: darkslategray;
+}
+
 .application {
 	display: flex;
 	justify-content: center;
@@ -11,6 +16,5 @@
 .nav-item {
 	margin: 1rem;
 	cursor: pointer;
-	color: firebrick;
 }
 
