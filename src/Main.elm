@@ -3,6 +3,7 @@ module Main exposing (main)
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (Html, a, div, h1, text)
+import Html.Attributes exposing (class, id)
 import Html.Events exposing (onClick)
 import Url exposing (Url)
 
@@ -64,11 +65,11 @@ view model =
 navigation : Html Msg
 navigation =
     div []
-        [ a [ onClick (Navigate "/") ] [ text "Home" ]
+        [ a [ onClick (Navigate "/"), class "nav-item", id "home-link" ] [ text "Home" ]
         , text " | "
-        , a [ onClick (Navigate "/about") ] [ text "About" ]
+        , a [ onClick (Navigate "/about"), class "nav-item" ] [ text "About" ]
         , text " | "
-        , a [ onClick (Navigate "/projects") ] [ text "Projects" ]
+        , a [ onClick (Navigate "/projects"), class "nav-item" ] [ text "Projects" ]
         ]
 
 
@@ -119,7 +120,7 @@ main =
                     Browser.Internal url ->
                         Navigate (Url.toString url)
 
-                    Browser.External href ->
+                    Browser.External _ ->
                         Navigate "/"
         , onUrlChange = UrlChanged
         }
