@@ -5167,14 +5167,14 @@ var $elm$core$Task$perform = F2(
 var $elm$browser$Browser$application = _Browser_application;
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
-var $author$project$Main$About = {$: 'About'};
+var $author$project$Main$Blog = {$: 'Blog'};
 var $author$project$Main$Home = {$: 'Home'};
 var $author$project$Main$Projects = {$: 'Projects'};
 var $author$project$Main$urlToPage = function (url) {
 	var _v0 = url.path;
 	switch (_v0) {
-		case '/about':
-			return $author$project$Main$About;
+		case '/blog':
+			return $author$project$Main$Blog;
 		case '/projects':
 			return $author$project$Main$Projects;
 		default:
@@ -5288,7 +5288,10 @@ var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$navigation = A2(
 	$elm$html$Html$div,
-	_List_Nil,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('navigation')
+		]),
 	_List_fromArray(
 		[
 			A2(
@@ -5310,12 +5313,12 @@ var $author$project$Main$navigation = A2(
 			_List_fromArray(
 				[
 					$elm$html$Html$Events$onClick(
-					$author$project$Main$Navigate('/about')),
+					$author$project$Main$Navigate('/blog')),
 					$elm$html$Html$Attributes$class('nav-item')
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('About')
+					$elm$html$Html$text('Blog')
 				])),
 			$elm$html$Html$text(' | '),
 			A2(
@@ -5349,7 +5352,7 @@ var $author$project$Main$pageContent = function (page) {
 							])),
 						$elm$html$Html$text('Welcome test 2')
 					]));
-		case 'About':
+		case 'Blog':
 			return A2(
 				$elm$html$Html$div,
 				_List_Nil,
@@ -5360,9 +5363,9 @@ var $author$project$Main$pageContent = function (page) {
 						_List_Nil,
 						_List_fromArray(
 							[
-								$elm$html$Html$text('About')
+								$elm$html$Html$text('Blog')
 							])),
-						$elm$html$Html$text('This is about.')
+						$elm$html$Html$text('This is blog.')
 					]));
 		default:
 			return A2(
