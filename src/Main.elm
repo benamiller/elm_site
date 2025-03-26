@@ -6,6 +6,7 @@ import Browser.Navigation as Nav
 import Html exposing (Html, a, div, h1, text)
 import Html.Attributes exposing (class, id)
 import Html.Events exposing (onClick)
+import Movies
 import Url exposing (Url)
 
 
@@ -96,7 +97,7 @@ pageContent page =
             Books.view
 
         Movies ->
-            div [] [ h1 [] [ text "Movies" ], text "These are movies" ]
+            Movies.view
 
 
 

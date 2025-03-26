@@ -5426,6 +5426,63 @@ var $author$project$Books$view = A2(
 			_List_Nil,
 			A2($elm$core$List$map, $author$project$Books$bookReview, $author$project$Books$books))
 		]));
+var $author$project$Movies$movieReview = function (movie) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('movie')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$h2,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(movie.title)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('by ' + movie.author)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(movie.review)
+					]))
+			]));
+};
+var $author$project$Movies$movies = _List_fromArray(
+	[
+		{author: 'Author 1', review: 'Review 1', title: 'Title 1'},
+		{author: 'Author 2', review: 'Review 2', title: 'Title 2'}
+	]);
+var $author$project$Movies$view = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('movies-container')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h1,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Movies')
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			A2($elm$core$List$map, $author$project$Movies$movieReview, $author$project$Movies$movies))
+		]));
 var $author$project$Main$pageContent = function (page) {
 	switch (page.$) {
 		case 'Home':
@@ -5476,20 +5533,7 @@ var $author$project$Main$pageContent = function (page) {
 		case 'Books':
 			return $author$project$Books$view;
 		default:
-			return A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$h1,
-						_List_Nil,
-						_List_fromArray(
-							[
-								$elm$html$Html$text('Movies')
-							])),
-						$elm$html$Html$text('These are movies')
-					]));
+			return $author$project$Movies$view;
 	}
 };
 var $author$project$Main$view = function (model) {
