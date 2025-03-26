@@ -5168,7 +5168,9 @@ var $elm$browser$Browser$application = _Browser_application;
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$Blog = {$: 'Blog'};
+var $author$project$Main$Books = {$: 'Books'};
 var $author$project$Main$Home = {$: 'Home'};
+var $author$project$Main$Movies = {$: 'Movies'};
 var $author$project$Main$Projects = {$: 'Projects'};
 var $author$project$Main$urlToPage = function (url) {
 	var _v0 = url.path;
@@ -5177,6 +5179,10 @@ var $author$project$Main$urlToPage = function (url) {
 			return $author$project$Main$Blog;
 		case '/projects':
 			return $author$project$Main$Projects;
+		case '/books':
+			return $author$project$Main$Books;
+		case '/movies':
+			return $author$project$Main$Movies;
 		default:
 			return $author$project$Main$Home;
 	}
@@ -5332,6 +5338,32 @@ var $author$project$Main$navigation = A2(
 			_List_fromArray(
 				[
 					$elm$html$Html$text('Projects')
+				])),
+			$elm$html$Html$text(' | '),
+			A2(
+			$elm$html$Html$a,
+			_List_fromArray(
+				[
+					$elm$html$Html$Events$onClick(
+					$author$project$Main$Navigate('/books')),
+					$elm$html$Html$Attributes$class('nav-item')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Books')
+				])),
+			$elm$html$Html$text(' | '),
+			A2(
+			$elm$html$Html$a,
+			_List_fromArray(
+				[
+					$elm$html$Html$Events$onClick(
+					$author$project$Main$Navigate('/movies')),
+					$elm$html$Html$Attributes$class('nav-item')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Movies')
 				]))
 		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
@@ -5367,7 +5399,7 @@ var $author$project$Main$pageContent = function (page) {
 							])),
 						$elm$html$Html$text('This is blog.')
 					]));
-		default:
+		case 'Projects':
 			return A2(
 				$elm$html$Html$div,
 				_List_Nil,
@@ -5381,6 +5413,36 @@ var $author$project$Main$pageContent = function (page) {
 								$elm$html$Html$text('Projects')
 							])),
 						$elm$html$Html$text('These are projects')
+					]));
+		case 'Books':
+			return A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$h1,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Books')
+							])),
+						$elm$html$Html$text('These are books')
+					]));
+		default:
+			return A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$h1,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Movies')
+							])),
+						$elm$html$Html$text('These are movies')
 					]));
 	}
 };
