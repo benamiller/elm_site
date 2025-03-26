@@ -1,5 +1,6 @@
 module Main exposing (main)
 
+import Books
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (Html, a, div, h1, text)
@@ -92,7 +93,7 @@ pageContent page =
             div [] [ h1 [] [ text "Projects" ], text "These are projects" ]
 
         Books ->
-            div [] [ h1 [] [ text "Books" ], text "These are books" ]
+            Books.view
 
         Movies ->
             div [] [ h1 [] [ text "Movies" ], text "These are movies" ]

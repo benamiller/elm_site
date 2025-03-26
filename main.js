@@ -5367,6 +5367,65 @@ var $author$project$Main$navigation = A2(
 				]))
 		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$p = _VirtualDom_node('p');
+var $author$project$Books$bookReview = function (book) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('book')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$h2,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(book.title)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('by ' + book.author)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(book.review)
+					]))
+			]));
+};
+var $author$project$Books$books = _List_fromArray(
+	[
+		{author: 'Author 1', review: 'Review 1', title: 'Title 1'},
+		{author: 'Author 2', review: 'Review 2', title: 'Title 2'}
+	]);
+var $author$project$Books$view = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('books-container')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h1,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Books')
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			A2($elm$core$List$map, $author$project$Books$bookReview, $author$project$Books$books))
+		]));
 var $author$project$Main$pageContent = function (page) {
 	switch (page.$) {
 		case 'Home':
@@ -5415,20 +5474,7 @@ var $author$project$Main$pageContent = function (page) {
 						$elm$html$Html$text('These are projects')
 					]));
 		case 'Books':
-			return A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$h1,
-						_List_Nil,
-						_List_fromArray(
-							[
-								$elm$html$Html$text('Books')
-							])),
-						$elm$html$Html$text('These are books')
-					]));
+			return $author$project$Books$view;
 		default:
 			return A2(
 				$elm$html$Html$div,
