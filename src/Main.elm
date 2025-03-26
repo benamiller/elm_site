@@ -20,6 +20,8 @@ type Page
     = Home
     | Blog
     | Projects
+    | Books
+    | Movies
 
 
 init : () -> Url -> Nav.Key -> ( Model, Cmd Msg )
@@ -70,6 +72,10 @@ navigation =
         , a [ onClick (Navigate "/blog"), class "nav-item" ] [ text "Blog" ]
         , text " | "
         , a [ onClick (Navigate "/projects"), class "nav-item" ] [ text "Projects" ]
+        , text " | "
+        , a [ onClick (Navigate "/books"), class "nav-item" ] [ text "Books" ]
+        , text " | "
+        , a [ onClick (Navigate "/movies"), class "nav-item" ] [ text "Movies" ]
         ]
 
 
@@ -85,6 +91,12 @@ pageContent page =
         Projects ->
             div [] [ h1 [] [ text "Projects" ], text "These are projects" ]
 
+        Books ->
+            div [] [ h1 [] [ text "Books" ], text "These are books" ]
+
+        Movies ->
+            div [] [ h1 [] [ text "Movies" ], text "These are movies" ]
+
 
 
 -- ROUTING
@@ -98,6 +110,12 @@ urlToPage url =
 
         "/projects" ->
             Projects
+
+        "/books" ->
+            Books
+
+        "/movies" ->
+            Movies
 
         _ ->
             Home
