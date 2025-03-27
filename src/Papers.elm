@@ -30,7 +30,7 @@ paperReview paper =
 
 papers : List Paper
 papers =
-    [ { title = "Title 1"
+    [ { title = "Paper 1"
       , author = "Author 1"
       , review = "Review 1"
       }

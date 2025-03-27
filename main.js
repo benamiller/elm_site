@@ -5171,6 +5171,7 @@ var $author$project$Main$Blog = {$: 'Blog'};
 var $author$project$Main$Books = {$: 'Books'};
 var $author$project$Main$Home = {$: 'Home'};
 var $author$project$Main$Movies = {$: 'Movies'};
+var $author$project$Main$Papers = {$: 'Papers'};
 var $author$project$Main$Projects = {$: 'Projects'};
 var $author$project$Main$urlToPage = function (url) {
 	var _v0 = url.path;
@@ -5183,6 +5184,8 @@ var $author$project$Main$urlToPage = function (url) {
 			return $author$project$Main$Books;
 		case '/movies':
 			return $author$project$Main$Movies;
+		case '/papers':
+			return $author$project$Main$Papers;
 		default:
 			return $author$project$Main$Home;
 	}
@@ -5364,6 +5367,19 @@ var $author$project$Main$navigation = A2(
 			_List_fromArray(
 				[
 					$elm$html$Html$text('Movies')
+				])),
+			$elm$html$Html$text(' | '),
+			A2(
+			$elm$html$Html$a,
+			_List_fromArray(
+				[
+					$elm$html$Html$Events$onClick(
+					$author$project$Main$Navigate('/papers')),
+					$elm$html$Html$Attributes$class('nav-item')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Papers')
 				]))
 		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
@@ -5410,8 +5426,95 @@ var $author$project$Books$bookReview = function (book) {
 };
 var $author$project$Books$books = _List_fromArray(
 	[
-		{author: 'Author 1', published: '2014', read: '2025', review: 'Review 1', title: 'Title 1'},
-		{author: 'Author 2', published: '2017', read: '2024', review: 'Review 2', title: 'Title 2'}
+		{author: 'Pedro Domingos', published: '2014', read: '2024', review: 'Review inbound for The Master Algorithm', title: 'The Master Algorithm'},
+		{author: 'Fei-Fei Li', published: '2023', read: '2024', review: 'Review for The Worlds I See', title: 'The Worlds I See'},
+		{author: 'Nick Bostrom', published: '2016', read: '2025', review: 'Review for Superintelligence', title: 'Superintelligence: Paths, Dangers, Strategies'},
+		{author: 'Yuval Noah Harari', published: '2011', read: '2024', review: 'Review for Sapiens', title: 'Sapiens: A Brief History of Humankind'},
+		{author: 'Yuval Noah Harari', published: '2011', read: '2024', review: 'Review for Sapiens', title: 'The Phoenix Project'},
+		{author: 'Yuval Noah Harari', published: '2011', read: '2024', review: 'Review for Sapiens', title: 'Androids: The Team that Build the Android Operating System'},
+		{author: 'Yuval Noah Harari', published: '1999', read: '2024', review: 'Review for Sapiens', title: 'The Pragmatic Programmer'},
+		{author: 'Yuval Noah Harari', published: '199', read: '2024', review: 'Review for Sapiens', title: 'Apollo'},
+		{author: 'Yuval Noah Harari', published: '199', read: '2024', review: 'Review for Sapiens', title: 'Contact'},
+		{author: 'Yuval Noah Harari', published: '199', read: '2024', review: 'Review for Sapiens', title: 'The Singularity is Near'},
+		{author: 'Yuval Noah Harari', published: '199', read: '2024', review: 'Review for Sapiens', title: 'The Singularity is Nearer'},
+		{author: 'Yuval Noah Harari', published: '199', read: '2024', review: 'Review for Sapiens', title: 'How to Create a Mind: The Secret of Human Thought Revealed'},
+		{author: 'Yuval Noah Harari', published: '199', read: '2024', review: 'Review for Sapiens', title: 'Atomic Habits'},
+		{author: 'Yuval Noah Harari', published: '199', read: '2016', review: 'Review for Sapiens', title: 'The Subtle Art of Not Giving a F*ck'},
+		{author: 'Yuval Noah Harari', published: '2018', read: '2024', review: 'Review for Sapiens', title: '12 Rules for Life'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Lying'},
+		{author: 'Yuval Noah Harari', published: '2012', read: '2024', review: 'Review for Sapiens', title: 'Free Will'},
+		{author: 'Yuval Noah Harari', published: '2006', read: '2024', review: 'Review for Sapiens', title: 'The God Delusion'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Feeling of Life Itself'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Lord of Souls: An Elder Scrolls Novel'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Thinking, Fast and Slow'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'It Ends With Us'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'It Starts With Us'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Hobbit'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The 7 Habits of Highly Effective People'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Countdown to Zero Day'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Critique of Pur Reason'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Philosophy Before Socrates'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: '1984'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Brave New World'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Bitter Lesson'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Deep Learning'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Fire & Blood'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Beyond Good and Evil'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Crime and Punishment'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Sandworm'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Foundation Series'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Harry Potter Series'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Emperor\'s New Mind'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Ultimate Hitchhiker\'s Guide to the Galaxy'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Origin of Consciousness in the Breakdown of the Bicameral Mind'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Dune Series'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'I am Legend'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Martian'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'I, Robot'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Culture Series'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Pale Blue Dot'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Look to Windward'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'I am Number Four'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'What is ChatGPT Doing... and Why Does it Work?'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'When we Cease to Understand the World'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Hunger Games'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Sunwing'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Ender\'s Game'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Ranger\'s Apprentice Series'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Life 3.0'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Homo Deus'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Outlive: The Science and Art of Longevity'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'On the Origin of Time: Stephen Hawking\'s Final Theory'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Black Holes: The Key to Understanding the Universe'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Laws of Nature'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Rise and Fall of the Dinosaurs: A New History of a Lost World'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Art of Seduction: An Indispensible Primer on the Ultimate Form of Power'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Failure is Not an Option: Mission Control from Mercury to Apollo 13 and Beyond'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Making of the Atomic Bomb: 25th Anniversary Edition'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The End of Faith'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Alignment Problem: Machine Learning and Human Values'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Emotional Brain: The Mysterious Underpinnings of Emotional Life'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Animal Farm'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Road to Wigan Pier'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Lord of the Flies'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Kite Runner'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'How to Win Friends and Influence People'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'We Are All Perfectly Fine: A Memoir of Love, Medicine and Healing'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Elon Musk'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Steve Jobs'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Moral Landscape'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Beyond Order: 12 More Rules for Life'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Maps of Meaning: The Architecture of Belief'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Pride and Prejudice'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Ready Player One'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Vital Question'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Life Ascending: The Ten Great Inventions of Evolution'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: '21 Lessons for the 21st Century'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'The Gulag Archipelago'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Do Androids Dream of Electric Sheep'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Tuesdays with Morrie: An Old Man, a Young Man, and Life\'s Greatest Lesson, 25th Anniversary Edition'},
+		{author: 'Yuval Noah Harari', published: '2013', read: '2024', review: 'Review for Sapiens', title: 'Vision: A Computational Investigation into the Human Representation and Processing of Visual Information'}
 	]);
 var $author$project$Books$view = A2(
 	$elm$html$Html$div,
@@ -5490,6 +5593,63 @@ var $author$project$Movies$view = A2(
 			_List_Nil,
 			A2($elm$core$List$map, $author$project$Movies$movieReview, $author$project$Movies$movies))
 		]));
+var $author$project$Papers$paperReview = function (paper) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('paper')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$h2,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(paper.title)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('by ' + paper.author)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(paper.review)
+					]))
+			]));
+};
+var $author$project$Papers$papers = _List_fromArray(
+	[
+		{author: 'Author 1', review: 'Review 1', title: 'Paper 1'},
+		{author: 'Author 2', review: 'Review 2', title: 'Title 2'}
+	]);
+var $author$project$Papers$view = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('papers-container')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h1,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Papers')
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			A2($elm$core$List$map, $author$project$Papers$paperReview, $author$project$Papers$papers))
+		]));
 var $author$project$Main$pageContent = function (page) {
 	switch (page.$) {
 		case 'Home':
@@ -5539,8 +5699,10 @@ var $author$project$Main$pageContent = function (page) {
 					]));
 		case 'Books':
 			return $author$project$Books$view;
-		default:
+		case 'Movies':
 			return $author$project$Movies$view;
+		default:
+			return $author$project$Papers$view;
 	}
 };
 var $author$project$Main$view = function (model) {
