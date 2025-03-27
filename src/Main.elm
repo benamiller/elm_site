@@ -7,6 +7,7 @@ import Html exposing (Html, a, div, h1, text)
 import Html.Attributes exposing (class, id)
 import Html.Events exposing (onClick)
 import Movies
+import Papers
 import Url exposing (Url)
 
 
@@ -24,6 +25,7 @@ type Page
     | Projects
     | Books
     | Movies
+    | Papers
 
 
 init : () -> Url -> Nav.Key -> ( Model, Cmd Msg )
@@ -78,6 +80,8 @@ navigation =
         , a [ onClick (Navigate "/books"), class "nav-item" ] [ text "Books" ]
         , text " | "
         , a [ onClick (Navigate "/movies"), class "nav-item" ] [ text "Movies" ]
+        , text " | "
+        , a [ onClick (Navigate "/papers"), class "nav-item" ] [ text "Papers" ]
         ]
 
 
@@ -99,6 +103,9 @@ pageContent page =
         Movies ->
             Movies.view
 
+        Papers ->
+            Papers.view
+
 
 
 -- ROUTING
@@ -118,6 +125,9 @@ urlToPage url =
 
         "/movies" ->
             Movies
+
+        "/papers" ->
+            Papers
 
         _ ->
             Home
