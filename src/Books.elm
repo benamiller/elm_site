@@ -26,6 +26,7 @@ bookReview book =
     div [ class "book" ]
         [ h2 [] [ text book.title ]
         , p [] [ text ("by " ++ book.author) ]
+        , p [] [ text ("published in " ++ book.published ++ ", read in " ++ book.read) ]
         , p [] [ text book.review ]
         ]
 
