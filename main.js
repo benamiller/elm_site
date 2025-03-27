@@ -5397,14 +5397,21 @@ var $author$project$Books$bookReview = function (book) {
 				_List_Nil,
 				_List_fromArray(
 					[
+						$elm$html$Html$text('published in ' + (book.published + (', read in ' + book.read)))
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
 						$elm$html$Html$text(book.review)
 					]))
 			]));
 };
 var $author$project$Books$books = _List_fromArray(
 	[
-		{author: 'Author 1', review: 'Review 1', title: 'Title 1'},
-		{author: 'Author 2', review: 'Review 2', title: 'Title 2'}
+		{author: 'Author 1', published: '2014', read: '2025', review: 'Review 1', title: 'Title 1'},
+		{author: 'Author 2', published: '2017', read: '2024', review: 'Review 2', title: 'Title 2'}
 	]);
 var $author$project$Books$view = A2(
 	$elm$html$Html$div,
