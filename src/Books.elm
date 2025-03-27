@@ -8,6 +8,8 @@ type alias Book =
     { title : String
     , author : String
     , review : String
+    , published : String
+    , read : String
     }
 
 
@@ -33,9 +35,13 @@ books =
     [ { title = "Title 1"
       , author = "Author 1"
       , review = "Review 1"
+      , published = "2014"
+      , read = "2025"
       }
     , { title = "Title 2"
       , author = "Author 2"
       , review = "Review 2"
+      , published = "2017"
+      , read = "2024"
       }
     ]
